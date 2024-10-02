@@ -1502,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1924310812410028788, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1924310812410028788, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1554,6 +1554,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218806913496739375, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458053176505416078, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.837
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052629445354168960, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192102097041712229, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
