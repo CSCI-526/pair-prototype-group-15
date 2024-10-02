@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public GameManagerScript gameManager; 
     public int maxHealth = 100; 
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
         StartCoroutine(DecreaseHealthOverTime());
+        UpdatePlayerScale();  // Set intial scale based on starting health
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
+        UpdatePlayerScale(); // Update sprite size when health is changed
     }
 
     //Decreasing Health over Time
@@ -65,7 +67,18 @@ public class Player : MonoBehaviour
             currentHealth -= 10; // Changes for Damage with time can be done here
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure health stays within bounds
             healthBar.SetHealth(currentHealth);
+            UpdatePlayerScale();
         }
+    }
+
+    void UpdatePlayerScale()
+    {
+        // Normalize health to a value between 0.5 and 1.5 for scaling
+        float healthPercentage = (float)currentHealth/maxHealth; 
+        float newScale = Mathf.Lerp(0.5f, 1.5f, healthPercentage);
+
+        // Update the player's scale based on current health
+        transform.localScale = new Vector3 (newScale, newScale, 1);
     }
 
 }
