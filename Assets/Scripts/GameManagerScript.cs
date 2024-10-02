@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -21,4 +22,20 @@ public class GameManagerScript : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restart");
+    }
+
+    public void mainMenu(){
+        SceneManager.LoadScene("MainMenu");
+        Debug.Log("MainMenu");
+    }
+
+    public void quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
