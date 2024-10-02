@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameManagerScript gameManager; 
     public int maxHealth = 100; 
     public int currentHealth; 
 
     public healthBar healthBar;  
+    private bool isDead; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,12 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space)){
             TakeDamage(10);
+        }
+        if(currentHealth <= 0 && !isDead)
+        {
+            isDead = true ;
+            gameManager.gameOver();
+            Debug.Log("Dead");
         }
         
     }
