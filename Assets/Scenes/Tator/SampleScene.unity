@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773239530d6924527996e11da3e0518f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1629980069}
@@ -653,6 +654,51 @@ Transform:
   - {fileID: 1876092860}
   - {fileID: 2006163387}
   - {fileID: 1892119469}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &744642588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744642590}
+  - component: {fileID: 744642589}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &744642589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744642588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb12116e8af584ba0b27e54e154419c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
+--- !u!4 &744642590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744642588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.08219, y: 33.94594, z: -0.8223148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905365505
@@ -1460,6 +1506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 670233019}
     m_Modifications:
+    - target: {fileID: 1011351555658850571, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 670233019}
     - target: {fileID: 1924310812410028788, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1582,3 +1632,4 @@ SceneRoots:
   - {fileID: 736581732}
   - {fileID: 2079819894}
   - {fileID: 377526642}
+  - {fileID: 744642590}

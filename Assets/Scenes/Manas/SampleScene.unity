@@ -1271,6 +1271,10 @@ PrefabInstance:
       propertyPath: gradient.m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1011351555658850571, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 670233019}
     - target: {fileID: 1924310812410028788, guid: a85a8288ed59f41aeb91f247add7cdfb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

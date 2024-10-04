@@ -21,21 +21,34 @@ public class PlayerHealth : MonoBehaviour
         UpdatePlayerScale();  // Set intial scale based on starting health
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        // Check if the collided object has the target tag
+        // if (collision.gameObject.CompareTag(targetTag))
+        if (collision.gameObject.CompareTag("Bullet"))
+        {              
+            transform.localScale += new Vector3(0.5f, 0.5f, 0);
+            TakeDamage(10);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         // Implement Collison detection here and change the health point accordingly
-        if(Input.GetKeyDown(KeyCode.Space)){
+        /*if(Input.GetKeyDown(KeyCode.Space)){
 
             TakeDamage(10); // Increasing Health by 10 points when ever player is hit
-        }
+        }*/
+
+
         if(currentHealth <= 0 && !isDead)
         {
             isDead = true ;
             gameManager.gameOver();
             Debug.Log("Dead");
         }
-       
         
     }
 
