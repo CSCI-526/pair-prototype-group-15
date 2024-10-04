@@ -327,6 +327,8 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 8665804625915870747}
+  playerTransform: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &2276933569221103381
 PrefabInstance:
   m_ObjectHideFlags: 0

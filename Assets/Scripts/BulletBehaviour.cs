@@ -6,6 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
     public float bulletSpeed = 10f;
     public float bulletLifeTime = 2f;
+    public float calories = 10f;
     private Rigidbody2D rb;
     private float lifeTime = 0;
 

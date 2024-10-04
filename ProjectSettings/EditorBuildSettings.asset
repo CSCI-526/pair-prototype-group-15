@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Manas/SampleScene.unity
-    guid: 380c5bc226653485f82bc08a7b422be0
+    path: Assets/Scenes/Merge/MainMenu.unity
+    guid: 906706e9096a7a947b4d45ba6d63f7a0
   - enabled: 1
-    path: Assets/Scenes/Manas/MainMenu.unity
-    guid: 4c67c07bd592246ff85faa8726242f65
+    path: Assets/Scenes/Merge/BattleField.unity
+    guid: 298251bec447c964ca93607be5053ea8
   m_configObjects: {}

@@ -7,11 +7,13 @@ public class healthBar : MonoBehaviour
     public Slider slider ; 
     public Gradient gradient ; 
     public Image fill ; 
-    public Transform playerTransform; // Drag the player transform here in the Inspector
+    // public Transform playerTransform; // Drag the player transform here in the Inspector
     public Vector3 offset; // Adjust the offset to position the health bar above the player
 
 
-    public void SetMaxHealth(int health){
+    public void SetMaxHealth(float health)
+    {
+        slider.minValue = 0f;
         slider.maxValue = health ; 
         slider.value = health ; 
 
@@ -19,7 +21,8 @@ public class healthBar : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void SetHealth(int health){
+    public void SetHealth(float health)
+    {
         slider.value = health ;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
@@ -27,7 +30,7 @@ public class healthBar : MonoBehaviour
     void Update()
     {
         // Keep the health bar at a fixed position above the player
-        transform.position = Camera.main.WorldToScreenPoint(playerTransform.position + offset);
+        // transform.position = playerTransform.position + offset;
     }
 
 }

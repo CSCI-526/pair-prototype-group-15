@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CrosshairController : MonoBehaviour
 {
-    public RectTransform crosshair;
+    private RectTransform crosshair;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
+        crosshair = GetComponent<RectTransform>();
+        crosshair.SetAsLastSibling();
     }
 
     // Update is called once per frame
@@ -19,6 +21,6 @@ public class CrosshairController : MonoBehaviour
             Cursor.visible = !Cursor.visible;
         }
         crosshair.position = Input.mousePosition;
-
+        crosshair.SetAsLastSibling();
     }
 }

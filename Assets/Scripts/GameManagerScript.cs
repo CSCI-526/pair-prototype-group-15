@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject gameOverUI; 
+    public GameObject gameOverUI;
+    public GameObject crosshair;
+    public GameObject player;
+    public GameObject[] enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,25 +21,38 @@ public class GameManagerScript : MonoBehaviour
     {
         
     }
-    public void gameOver()
+
+    public void gameOver(string text)
     {
+        //find child in gameoverUI by name
+        crosshair.SetActive(false);
+        Cursor.visible = true;
+        gameOverUI.transform.Find("Information").GetComponent<TextMeshProUGUI>().text = text;
         gameOverUI.SetActive(true);
+        player.GetComponent<MovementController>().enabled = false;
+        player.GetComponent<ShootController>().enabled = false;
+        player.GetComponent<HealthController>().enabled = false;
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("Restart");
+        //Debug.Log("Restart");
     }
 
-    public void mainMenu(){
+    public void mainMenu()
+    {
         SceneManager.LoadScene("MainMenu");
-        Debug.Log("MainMenu");
+        //Debug.Log("MainMenu");
     }
 
     public void quit()
     {
         Debug.Log("Quit");
-        Application.Quit();
+        //Application.Quit();
     }
 }
